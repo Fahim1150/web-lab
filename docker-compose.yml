@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+
+  server:
+    build: ./server
+    container_name: web-lab-server
+    ports:
+      - "3000:3000"
+
+  client:
+    build: ./client
+    container_name: web-lab-client
+    ports:
+      - "80:80"
+    depends_on:
+      - server
