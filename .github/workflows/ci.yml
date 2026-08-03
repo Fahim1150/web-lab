@@ -4,24 +4,22 @@ on:
   push:
     branches:
       - development
-      - main
 
 jobs:
-  deploy:
+  test:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Test SSH Connection
-        uses: appleboy/ssh-action@v1.0.3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
-          port: 22
-          debug: true
-          script: |
-            whoami
-            hostname
-            pwd
+          node-version: 20
+
+      - name: Install Newman
+        run: npm install -g newman
+
+      - name: Run API Tests
+        run: |
+          newman run test/JSONPlaceholder_API_50_Request_Test_Suite.postman_collection.json

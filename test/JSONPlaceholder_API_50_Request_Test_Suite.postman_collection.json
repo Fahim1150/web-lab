@@ -1,0 +1,2193 @@
+{
+  "info": {
+    "_postman_id": "a1b2c3d4-e5f6-7890-1234-56789abcdef0",
+    "name": "JSONPlaceholder API 50-Request Test Suite",
+    "description": "A comprehensive Postman v2.1 collection containing 50 unique requests against JSONPlaceholder API across all 6 resources and 5 HTTP methods.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET Requests",
+      "item": [
+        {
+          "name": "Get All Posts",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/posts",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "posts"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Post by ID (1)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/posts/1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "posts",
+                "1"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Post Comments (Post 1)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/posts/1/comments",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "posts",
+                "1",
+                "comments"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Filter Posts by User (UserId 1)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/posts?userId=1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "posts"
+              ],
+              "query": [
+                {
+                  "key": "userId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get All Comments",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/comments",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "comments"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Comment by ID (1)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/comments/1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "comments",
+                "1"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Filter Comments by PostId (Post 2)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/comments?postId=2",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "comments"
+              ],
+              "query": [
+                {
+                  "key": "postId",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get All Albums",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/albums",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "albums"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Album by ID (1)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/albums/1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "albums",
+                "1"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Photos in Album (Album 1)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/albums/1/photos",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "albums",
+                "1",
+                "photos"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Filter Albums by User (UserId 1)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/albums?userId=1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "albums"
+              ],
+              "query": [
+                {
+                  "key": "userId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get All Photos",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/photos",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "photos"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Photo by ID (1)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/photos/1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "photos",
+                "1"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get All Todos",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/todos",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "todos"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Todo by ID (1)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/todos/1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "todos",
+                "1"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "POST Requests",
+      "item": [
+        {
+          "name": "Create Post - Sample 1",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/posts",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "posts"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"foo\",\n  \"body\": \"bar\",\n  \"userId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 201', function () {\n    pm.response.to.have.status(201);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Post - Sample 2",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/posts",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "posts"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Automated Testing\",\n  \"body\": \"Testing post creation via Postman/Newman.\",\n  \"userId\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 201', function () {\n    pm.response.to.have.status(201);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Post - Sample 3",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/posts",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "posts"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"CI/CD Pipeline\",\n  \"body\": \"Integrating postman collection into pipeline.\",\n  \"userId\": 3\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 201', function () {\n    pm.response.to.have.status(201);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Comment - Post 1",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/comments",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "comments"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Great post\",\n  \"email\": \"test@example.com\",\n  \"body\": \"Insightful content!\",\n  \"postId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 201', function () {\n    pm.response.to.have.status(201);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Comment - Post 2",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/comments",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "comments"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Feedback\",\n  \"email\": \"user@test.org\",\n  \"body\": \"Very helpful thanks.\",\n  \"postId\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 201', function () {\n    pm.response.to.have.status(201);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Album - User 1",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/albums",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "albums"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Vacation 2026\",\n  \"userId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 201', function () {\n    pm.response.to.have.status(201);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Album - User 2",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/albums",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "albums"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Work Showcase\",\n  \"userId\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 201', function () {\n    pm.response.to.have.status(201);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Photo - Album 1",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/photos",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "photos"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"albumId\": 1,\n  \"title\": \"Sunset View\",\n  \"url\": \"https://via.placeholder.com/600/92c952\",\n  \"thumbnailUrl\": \"https://via.placeholder.com/150/92c952\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 201', function () {\n    pm.response.to.have.status(201);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Photo - Album 2",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/photos",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "photos"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"albumId\": 2,\n  \"title\": \"Mountain Peak\",\n  \"url\": \"https://via.placeholder.com/600/771796\",\n  \"thumbnailUrl\": \"https://via.placeholder.com/150/771796\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 201', function () {\n    pm.response.to.have.status(201);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Todo - User 1",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/todos",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "todos"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Complete API automation test\",\n  \"completed\": false,\n  \"userId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 201', function () {\n    pm.response.to.have.status(201);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Todo - User 2",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/todos",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "todos"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Review pull request\",\n  \"completed\": true,\n  \"userId\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 201', function () {\n    pm.response.to.have.status(201);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create Todo - User 3",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/todos",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "todos"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Setup Jenkins CI job\",\n  \"completed\": false,\n  \"userId\": 3\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 201', function () {\n    pm.response.to.have.status(201);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create User - John Doe",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/users",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "users"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John Doe\",\n  \"username\": \"johnd\",\n  \"email\": \"john@example.com\",\n  \"address\": {\n    \"street\": \"Main St\",\n    \"city\": \"Metropolis\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 201', function () {\n    pm.response.to.have.status(201);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create User - Jane Smith",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/users",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "users"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Jane Smith\",\n  \"username\": \"janes\",\n  \"email\": \"jane@example.com\",\n  \"company\": {\n    \"name\": \"TechCorp\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 201', function () {\n    pm.response.to.have.status(201);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Create User - Alex Tech",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/users",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "users"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Alex Tech\",\n  \"username\": \"alex\",\n  \"email\": \"alex@example.com\",\n  \"phone\": \"123-456-7890\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 201', function () {\n    pm.response.to.have.status(201);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PUT Requests",
+      "item": [
+        {
+          "name": "Update Full Post (1)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/posts/1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "posts",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"title\": \"Updated Title Post 1\",\n  \"body\": \"Entirely updated body content.\",\n  \"userId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Update Full Post (2)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/posts/2",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "posts",
+                "2"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 2,\n  \"title\": \"Updated Title Post 2\",\n  \"body\": \"Updated content for second post.\",\n  \"userId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Update Full Comment (1)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/comments/1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "comments",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"name\": \"Updated Comment Name\",\n  \"email\": \"updated@example.com\",\n  \"body\": \"Updated comment content\",\n  \"postId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Update Full Album (1)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/albums/1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "albums",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"title\": \"Updated Album Title\",\n  \"userId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Update Full Photo (1)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/photos/1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "photos",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"albumId\": 1,\n  \"title\": \"Updated Photo Title\",\n  \"url\": \"https://via.placeholder.com/600/updated\",\n  \"thumbnailUrl\": \"https://via.placeholder.com/150/updated\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Update Full Todo (1)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/todos/1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "todos",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"title\": \"Updated Todo Task\",\n  \"completed\": true,\n  \"userId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Update Full Todo (2)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/todos/2",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "todos",
+                "2"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 2,\n  \"title\": \"Updated Todo Task 2\",\n  \"completed\": false,\n  \"userId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Update Full User (1)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/users/1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "users",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"name\": \"Leanne Graham Updated\",\n  \"username\": \"Bret\",\n  \"email\": \"sincere@april.biz\",\n  \"phone\": \"1-770-736-8031\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PATCH Requests",
+      "item": [
+        {
+          "name": "Patch Post Title (1)",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/posts/1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "posts",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Patched Title Only\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Patch Post Body (2)",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/posts/2",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "posts",
+                "2"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"body\": \"Patched Body Only Content\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Patch Comment Email (1)",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/comments/1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "comments",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"patched_email@example.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Patch Album Title (1)",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/albums/1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "albums",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Patched Album Title\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Patch Todo Status (1)",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/todos/1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "todos",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"completed\": true\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Patch User Email (1)",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/users/1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "users",
+                "1"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"new_user_email@example.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DELETE Requests",
+      "item": [
+        {
+          "name": "Delete Post (1)",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/posts/1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "posts",
+                "1"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Delete Comment (1)",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/comments/1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "comments",
+                "1"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Delete Album (1)",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/albums/1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "albums",
+                "1"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Delete Photo (1)",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/photos/1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "photos",
+                "1"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Delete Todo (1)",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/todos/1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "todos",
+                "1"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        },
+        {
+          "name": "Delete User (1)",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json; charset=UTF-8"
+              }
+            ],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/users/1",
+              "protocol": "https",
+              "host": [
+                "jsonplaceholder",
+                "typicode",
+                "com"
+              ],
+              "path": [
+                "users",
+                "1"
+              ]
+            }
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test('Status code is 200', function () {\n    pm.response.to.have.status(200);\n});\n",
+                  "pm.test('Response time is acceptable', function () {\n    pm.expect(pm.response.responseTime).to.be.below(2000);\n});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
