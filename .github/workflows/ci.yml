@@ -23,3 +23,20 @@ jobs:
       - name: Run API Tests
         run: |
           newman run test/JSONPlaceholder_API_50_Request_Test_Suite.postman_collection.json
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to VPS
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            cd /root/web-lab
+            git pull origin development
+            docker compose down
+            docker compose up -d --build
