@@ -3,7 +3,7 @@
 This patch modifies the existing `web-lab` development branch for the Lab 03 CRUD requirements.
 
 ## Entity
-BloodRequest (Donor and Patient are intentionally not used as the CRUD entity.)
+BloodRequest
 
 ## MVC
 - Model: `server/models/BloodRequest.js`
