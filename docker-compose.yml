@@ -22,8 +22,8 @@ services:
   client:
     build: ./client
     container_name: web-lab-client
-  ports:
-    - "8080:80"
+    ports:
+      - "8080:80"
     depends_on:
       - server
 
