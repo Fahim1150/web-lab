@@ -1,0 +1,167 @@
+{
+  "info": {
+    "_postman_id": "e650015c-7481-4584-9af5-b7ecdd2e9fa9",
+    "name": "LAB-03-Alisha-Donor CRUD",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57085703",
+    "_collection_link": "https://go.postman.co/collection/57085703-e650015c-7481-4584-9af5-b7ecdd2e9fa9?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Create Donor",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const response = pm.response.json();\r",
+              "\r",
+              "if (response._id) {\r",
+              "    pm.collectionVariables.set(\"requestId\", response._id);\r",
+              "    console.log(\"requestId saved:\", response._id);\r",
+              "}"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Rahim Ahmed\",\r\n    \"email\": \"rahim@gmail.com\",\r\n    \"phone\": \"01700000000\",\r\n    \"bloodGroup\": \"O+\",\r\n    \"district\": \"Dhaka\",\r\n    \"available\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/donors",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "donors"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Donors",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Rahim Ahmed\",\r\n    \"email\": \"rahim@gmail.com\",\r\n    \"phone\": \"01700000000\",\r\n    \"bloodGroup\": \"O+\",\r\n    \"district\": \"Dhaka\",\r\n    \"available\": true\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/donors",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "donors"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Donor By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/donors/{{requestId}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "donors",
+            "{{requestId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Donor",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Rahim Ahmed\",\r\n    \"email\": \"rahim@gmail.com\",\r\n    \"phone\": \"01811111111\",\r\n    \"bloodGroup\": \"O+\",\r\n    \"district\": \"Dhaka\",\r\n    \"available\": false\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/donors/{{requestId}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "donors",
+            "{{requestId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Donor",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Rahim Ahmed\",\r\n    \"email\": \"rahim@gmail.com\",\r\n    \"phone\": \"01811111111\",\r\n    \"bloodGroup\": \"O+\",\r\n    \"district\": \"Dhaka\",\r\n    \"available\": false\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/donors/{{requestId}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "donors",
+            "{{requestId}}"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "requestId",
+      "value": ""
+    }
+  ]
+}
