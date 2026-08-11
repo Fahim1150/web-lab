@@ -79,7 +79,7 @@ docker compose up -d --build
 Check:
 
 curl http://localhost:3000/api
-curl http://localhost:3000/api/health
+curl http://localhost:3000/api/donors
 
 ## Postman
 
