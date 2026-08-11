@@ -1,0 +1,186 @@
+{
+  "info": {
+    "name": "BADHON Lab 03 - Blood Request CRUD",
+    "_postman_id": "badhon-lab03-crud-2026",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "CRUD tests for the BADHON BloodRequest entity."
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    },
+    {
+      "key": "requestId",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "Create Blood Request",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"patientName\": \"Rahim Ahmed\",\n  \"bloodGroup\": \"O+\",\n  \"location\": \"Savar\",\n  \"contactNumber\": \"01700000000\",\n  \"requiredUnits\": 2,\n  \"urgency\": \"High\",\n  \"status\": \"Pending\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/blood-requests",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "blood-requests"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 201', () => pm.response.to.have.status(201));",
+              "const data = pm.response.json();",
+              "pm.expect(data._id).to.exist;",
+              "pm.collectionVariables.set('requestId', data._id);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Get All Blood Requests",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/blood-requests",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "blood-requests"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', () => pm.response.to.have.status(200));",
+              "pm.expect(pm.response.json()).to.be.an('array');"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Get Blood Request by ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/blood-requests/{{requestId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "blood-requests",
+            "{{requestId}}"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', () => pm.response.to.have.status(200));",
+              "pm.expect(pm.response.json()._id).to.eql(pm.collectionVariables.get('requestId'));"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Update Blood Request",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"patientName\": \"Rahim Ahmed Updated\",\n  \"bloodGroup\": \"O+\",\n  \"location\": \"Dhaka\",\n  \"contactNumber\": \"01700000000\",\n  \"requiredUnits\": 3,\n  \"urgency\": \"Emergency\",\n  \"status\": \"Pending\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/blood-requests/{{requestId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "blood-requests",
+            "{{requestId}}"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', () => pm.response.to.have.status(200));",
+              "pm.expect(pm.response.json().requiredUnits).to.eql(3);",
+              "pm.expect(pm.response.json().urgency).to.eql('Emergency');"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Delete Blood Request",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "{{baseUrl}}/api/blood-requests/{{requestId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "blood-requests",
+            "{{requestId}}"
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', () => pm.response.to.have.status(200));",
+              "pm.expect(pm.response.json().message).to.eql('Blood request deleted successfully');"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
