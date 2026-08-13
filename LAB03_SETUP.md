@@ -75,12 +75,12 @@ From the repository root:
 ```bash
 docker compose down --remove-orphans
 docker compose up -d --build
-
+```
 Check:
-
+```
 curl http://localhost:3000/api
 curl http://localhost:3000/api/donors
-
+```
 ## Postman
 
 Import:
@@ -99,7 +99,8 @@ The Create request automatically saves the returned MongoDB _id into requestId.
 
 ## Git
 After applying the patch:
-
+```
 git add .
 git commit -m "Implement Donor CRUD for Lab 03"
 git push origin development
+```
