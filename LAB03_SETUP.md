@@ -85,7 +85,7 @@ curl http://localhost:3000/api/donors
 
 Import:
 
-test/LAB-03-Alisha-Donor CRUD.postman_collection.json
+`test/LAB-03-Alisha-Donor CRUD.postman_collection.json`
 
 Run the collection in order:
 
@@ -95,7 +95,7 @@ Get Donor by ID
 Update Donor
 Delete Donor
 
-The Create request automatically saves the returned MongoDB _id into requestId.
+The Create request automatically saves the returned MongoDB `_id` into `requestId`.
 
 ## Git
 After applying the patch:
