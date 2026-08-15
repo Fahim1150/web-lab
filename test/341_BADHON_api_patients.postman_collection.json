@@ -1,0 +1,224 @@
+{
+  "info": {
+    "_postman_id": "4f02a12d-ecaf-462f-b541-c279a9c04e53",
+    "name": "341_BADHON_api_patients",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57098328",
+    "_collection_link": "https://go.postman.co/collection/57098328-4f02a12d-ecaf-462f-b541-c279a9c04e53?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "patients",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 200', function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test('Response time is acceptable', function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://163.61.236.113:3000/api/patients/",
+          "protocol": "http",
+          "host": [
+            "163",
+            "61",
+            "236",
+            "113"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "patients",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "patients id",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 200', function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test('Response time is acceptable', function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://163.61.236.113:3000/api/patients/{{requestId}}",
+          "protocol": "http",
+          "host": [
+            "163",
+            "61",
+            "236",
+            "113"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "patients",
+            "{{requestId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "patients",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 201', function () {\r",
+              "    pm.response.to.have.status(201);\r",
+              "});\r",
+              "\r",
+              "pm.test('Response time is acceptable', function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Abdus Salam\",\r\n  \"age\": 67,\r\n  \"gender\": \"Male\",\r\n  \"bloodGroup\": \"B+\",\r\n  \"phone\": \"01737541933\",\r\n  \"address\": \"Birganj, Dinajpur\",\r\n  \"disease\": \"Diabetes\",\r\n  \"emergencyContact\": \"01525645411\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://163.61.236.113:3000/api/patients",
+          "protocol": "http",
+          "host": [
+            "163",
+            "61",
+            "236",
+            "113"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "patients"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "patients",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 200', () => pm.response.to.have.status(200));\r",
+              "pm.expect(pm.response.json().requiredUnits).to.eql(3);\r",
+              "pm.expect(pm.response.json().urgency).to.eql('Emergency');"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\r\n        \"name\": \"Abdul Karim updated\",\r\n        \"age\": 42,\r\n        \"gender\": \"Male\",\r\n        \"bloodGroup\": \"O-\",\r\n        \"phone\": \"01712345678\",\r\n        \"address\": \"Mirpur, Dhaka\",\r\n        \"disease\": \"Hypertension\",\r\n        \"emergencyContact\": \"01898765432\",\r\n        \"createdAt\": \"2026-08-15T16:11:59.010Z\",\r\n        \"updatedAt\": \"2026-08-15T16:11:59.010Z\",\r\n        \"__v\": 0\r\n    \r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://163.61.236.113:3000/api/patients/{{requestId}}",
+          "protocol": "http",
+          "host": [
+            "163",
+            "61",
+            "236",
+            "113"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "patients",
+            "{{requestId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "patients",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\r\n        \"name\": \"Abdul Karim updated\",\r\n        \"age\": 42,\r\n        \"gender\": \"Male\",\r\n        \"bloodGroup\": \"O-\",\r\n        \"phone\": \"01712345678\",\r\n        \"address\": \"Mirpur, Dhaka\",\r\n        \"disease\": \"Hypertension\",\r\n        \"emergencyContact\": \"01898765432\",\r\n        \"createdAt\": \"2026-08-15T16:11:59.010Z\",\r\n        \"updatedAt\": \"2026-08-15T16:11:59.010Z\",\r\n        \"__v\": 0\r\n    \r\n}"
+        },
+        "url": {
+          "raw": "http://163.61.236.113:3000/api/patients/{{requestId}}",
+          "protocol": "http",
+          "host": [
+            "163",
+            "61",
+            "236",
+            "113"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "patients",
+            "{{requestId}}"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
