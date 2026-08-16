@@ -105,3 +105,57 @@ git commit -m "Implement Donor CRUD for Lab 03"
 git push origin development
 ```
 
+## Entity
+Patient
+
+## MVC
+
+- Model: `server/models/Patient.js`
+- View layer: existing React client; `server/views/` documents the JSON API presentation boundary
+- Controllers: `server/controllers/patientController.js`
+- Routes: `server/routes/patientRoutes.js`
+
+## API Endpoints
+
+- Create Patient: `POST /api/patients`
+- Get all Patients: `GET /api/patients`
+- Get Patient by ID: `GET /api/patients/:id`
+- Update Patient: `PUT /api/patients/:id`
+- Delete Patient: `DELETE /api/patients/:id`
+
+## Run
+
+From the repository root:
+
+```bash
+docker compose down --remove-orphans
+docker compose up -d --build
+```
+Check:
+```
+curl http://163.61.236.113:3000/api
+curl http://163.61.236.113:3000/api/patients
+```
+## Postman
+
+Import:
+
+`test/341_BADHON_api_patients.postman_collection.json`
+
+Run the collection in order:
+
+Create Patient
+Get all Patients
+Get Patient by ID
+Update Patient
+Delete Patient
+
+The Create request automatically saves the returned MongoDB _id into patientId.
+
+## Git
+After applying the patch:
+```
+git add .
+git commit -m "Patient CRUD"
+git push origin development
+```
