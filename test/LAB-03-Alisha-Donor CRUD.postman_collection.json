@@ -40,7 +40,7 @@
           }
         },
         "url": {
-          "raw": "http://localhost:3000/api/donors",
+          "raw": "http://163.61.236.113:3000/api/donors",
           "protocol": "http",
           "host": [
             "localhost"
@@ -67,10 +67,10 @@
           "raw": "{\r\n    \"name\": \"Rahim Ahmed\",\r\n    \"email\": \"rahim@gmail.com\",\r\n    \"phone\": \"01700000000\",\r\n    \"bloodGroup\": \"O+\",\r\n    \"district\": \"Dhaka\",\r\n    \"available\": true\r\n}"
         },
         "url": {
-          "raw": "http://localhost:3000/api/donors",
+          "raw": "http://163.61.236.113:3000/api/donors",
           "protocol": "http",
           "host": [
-            "localhost"
+            "163.61.236.113"
           ],
           "port": "3000",
           "path": [
@@ -87,10 +87,10 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:3000/api/donors/{{requestId}}",
+          "raw": "http://163.61.236.113:3000/api/donors/{{requestId}}",
           "protocol": "http",
           "host": [
-            "localhost"
+            "163.61.236.113"
           ],
           "port": "3000",
           "path": [
@@ -117,10 +117,10 @@
           }
         },
         "url": {
-          "raw": "http://localhost:3000/api/donors/{{requestId}}",
+          "raw": "http://163.61.236.113:3000/api/donors/{{requestId}}",
           "protocol": "http",
           "host": [
-            "localhost"
+            "163.61.236.113"
           ],
           "port": "3000",
           "path": [
@@ -142,10 +142,10 @@
           "raw": "{\r\n    \"name\": \"Rahim Ahmed\",\r\n    \"email\": \"rahim@gmail.com\",\r\n    \"phone\": \"01811111111\",\r\n    \"bloodGroup\": \"O+\",\r\n    \"district\": \"Dhaka\",\r\n    \"available\": false\r\n}"
         },
         "url": {
-          "raw": "http://localhost:3000/api/donors/{{requestId}}",
+          "raw": "http://163.61.236.113:3000/api/donors/{{requestId}}",
           "protocol": "http",
           "host": [
-            "localhost"
+            "163.61.236.113"
           ],
           "port": "3000",
           "path": [
