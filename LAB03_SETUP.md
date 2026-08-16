@@ -21,8 +21,8 @@ docker compose up -d --build
 
 Check:
 ```bash
-curl http://localhost:3000/api
-curl http://localhost:3000/api/health
+curl http://163.61.236.113:3000/api
+curl http://163.61.236.113:3000/api/health
 ```
 
 ## Postman
@@ -78,8 +78,8 @@ docker compose up -d --build
 ```
 Check:
 ```
-curl http://localhost:3000/api
-curl http://localhost:3000/api/donors
+curl http://163.61.236.113:3000/api
+curl http://163.61.236.113:3000/api/donors
 ```
 ## Postman
 
