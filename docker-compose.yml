@@ -20,12 +20,12 @@ services:
       - mongodb
 
   client:
-  build: ./client
-  container_name: web-lab-client
-  ports:
-    - "80:80"
-  depends_on:
-    - server
+    build: ./client
+    container_name: web-lab-client
+    ports:
+      - "80:80"
+    depends_on:
+      - server
 
 volumes:
   mongo_data:
