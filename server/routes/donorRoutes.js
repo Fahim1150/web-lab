@@ -1,3 +1,4 @@
+const authMiddleware = require("../middleware/authMiddleware");
 const express = require("express");
 
 const {
@@ -10,10 +11,10 @@ const {
 
 const router = express.Router();
 
-router.post("/", createDonor);
-router.get("/", getDonors);
-router.get("/:id", getDonorById);
-router.put("/:id", updateDonor);
-router.delete("/:id", deleteDonor);
+router.post("/", authMiddleware, createDonor);
+router.get("/", authMiddleware, getDonors);
+router.get("/:id", authMiddleware, getDonorById);
+router.put("/:id", authMiddleware, updateDonor);
+router.delete("/:id", authMiddleware, deleteDonor);
 
 module.exports = router;

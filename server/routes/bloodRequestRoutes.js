@@ -1,3 +1,4 @@
+const authMiddleware = require("../middleware/authMiddleware");
 const express = require("express");
 const {
   createBloodRequest,
@@ -9,10 +10,10 @@ const {
 
 const router = express.Router();
 
-router.post("/", createBloodRequest);
-router.get("/", getBloodRequests);
-router.get("/:id", getBloodRequestById);
-router.put("/:id", updateBloodRequest);
-router.delete("/:id", deleteBloodRequest);
+router.post("/", authMiddleware, createBloodRequest);
+router.get("/", authMiddleware, getBloodRequests);
+router.get("/:id", authMiddleware, getBloodRequestById);
+router.put("/:id", authMiddleware, updateBloodRequest);
+router.delete("/:id", authMiddleware, deleteBloodRequest);
 
 module.exports = router;

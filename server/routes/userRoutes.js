@@ -1,3 +1,4 @@
+const authMiddleware = require("../middleware/authMiddleware");
 const express = require("express");
 
 const {
@@ -6,14 +7,17 @@ const {
     getUserById,
     updateUser,
     deleteUser,
+    loginUser,
 } = require("../controllers/userController");
 
 const router = express.Router();
 
-router.post("/", createUser);
-router.get("/", getUsers);
-router.get("/:id", getUserById);
-router.put("/:id", updateUser);
-router.delete("/:id", deleteUser);
+router.post("/", authMiddleware, createUser);
+router.post("/login", authMiddleware, loginUser);
+
+router.get("/", authMiddleware, getUsers);
+router.get("/:id", authMiddleware, getUserById);
+router.put("/:id", authMiddleware, updateUser);
+router.delete("/:id", authMiddleware, deleteUser);
 
 module.exports = router;

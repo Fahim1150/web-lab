@@ -98,10 +98,57 @@ const deleteUser = async (req, res) => {
     }
 };
 
+// Login User
+const loginUser = async (req, res) => {
+    try {
+        const { Email, Password } = req.body;
+
+        const user = await User.findOne({ Email });
+
+        if (!user) {
+            return res.status(401).json({
+                message: "Invalid email or password",
+            });
+        }
+
+        const isMatch = await bcrypt.compare(
+            Password,
+            user.Password
+        );
+
+        if (!isMatch) {
+            return res.status(401).json({
+                message: "Invalid email or password",
+            });
+        }
+
+        const token = jwt.sign(
+            {
+                User_ID: user.User_ID,
+                Role: user.Role,
+            },
+            process.env.JWT_SECRET,
+            {
+                expiresIn: "1d",
+            }
+        );
+
+        res.status(200).json({
+            message: "Login successful",
+            token: token,
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            message: error.message,
+        });
+    }
+};
 module.exports = {
     createUser,
     getUsers,
     getUserById,
     updateUser,
     deleteUser,
+    loginUser,
 };
