@@ -18,7 +18,7 @@ services:
       MONGO_URI: mongodb://mongodb:27017/badhon
       JWT_SECRET: super-secret-jwt-key
     depends_on: 
-    - mongodb
+      - mongodb
 
   client:
     build: ./client
