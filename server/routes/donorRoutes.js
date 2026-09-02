@@ -1,5 +1,7 @@
-const authMiddleware = require("../middleware/authMiddleware");
 const express = require("express");
+
+const authMiddleware = require("../middleware/authMiddleware");
+const authorizeRoles = require("../middleware/roleMiddleware");
 
 const {
     createDonor,
@@ -12,9 +14,18 @@ const {
 const router = express.Router();
 
 router.post("/", authMiddleware, createDonor);
+
 router.get("/", authMiddleware, getDonors);
+
 router.get("/:id", authMiddleware, getDonorById);
+
 router.put("/:id", authMiddleware, updateDonor);
-router.delete("/:id", authMiddleware, deleteDonor);
+
+router.delete(
+    "/:id",
+    authMiddleware,
+    authorizeRoles("ADMIN"),
+    deleteDonor
+);
 
 module.exports = router;

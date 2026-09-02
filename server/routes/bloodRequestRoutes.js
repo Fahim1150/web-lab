@@ -1,7 +1,8 @@
+const express = require("express");
+
 const authenticateToken = require("../middleware/authMiddleware");
 const authorizeRoles = require("../middleware/roleMiddleware");
-const authMiddleware = require("../middleware/authMiddleware");
-const express = require("express");
+
 const {
   createBloodRequest,
   getBloodRequests,
@@ -31,10 +32,5 @@ router.delete(
   authorizeRoles("ADMIN"),
   deleteBloodRequest
 );
-router.post("/", authMiddleware, createBloodRequest);
-router.get("/", authMiddleware, getBloodRequests);
-router.get("/:id", authMiddleware, getBloodRequestById);
-router.put("/:id", authMiddleware, updateBloodRequest);
-router.delete("/:id", authMiddleware, deleteBloodRequest);
 
 module.exports = router;
