@@ -1,4 +1,5 @@
 const authMiddleware = require("../middleware/authMiddleware");
+const authorizeRoles = require("../middleware/roleMiddleware");
 const express = require("express");
 
 const {
@@ -23,7 +24,12 @@ router.get("/:id", authMiddleware, getPatientById);
 // Update a patient
 router.put("/:id", authMiddleware, updatePatient);
 
-// Delete a patient
-router.delete("/:id", authMiddleware, deletePatient);
+// Delete a patient - ADMIN only
+router.delete(
+  "/:id",
+  authMiddleware,
+  authorizeRoles("ADMIN"),
+  deletePatient
+);
 
 module.exports = router;
